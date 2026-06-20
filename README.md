@@ -90,12 +90,7 @@ No installation or dependencies are required.
 
 > Add screenshots of your project here.
 
-```
-assets/
-├── home.png
-├── templates.png
-└── editor.png
-```
+Loading Window - (https://github.com/Anuj-Bajetha/Personal-Portfolio/blob/94160e922c5d6c1f375c7c2e8ca10d1ff3656d8d/Loading%20Window.png)
 
 ---
 
