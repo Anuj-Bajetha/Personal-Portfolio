@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfoly — Build Your Dream Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=DM+Mono:wght@400;500&family=Lora:ital,wght@0,700;1,600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader" class="loader-overlay">
+    <div class="loader-content">
+      <div class="loader-logo">
+        <div class="loader-ring-1"></div>
+        <div class="loader-ring-2"></div>
+        <div class="loader-orb"></div>
+        <svg viewBox="0 0 18 18" fill="none" class="loader-svg">
+          <rect width="8" height="8" rx="2" fill="currentColor" />
+          <rect x="10" width="8" height="8" rx="2" fill="currentColor" opacity=".55" />
+          <rect y="10" width="8" height="8" rx="2" fill="currentColor" opacity=".55" />
+          <rect x="10" y="10" width="8" height="8" rx="2" fill="currentColor" />
+        </svg>
+      </div>
+      <div class="loader-text">Portfoly</div>
+    </div>
+  </div>
+
+  <div class="noise-layer"></div>
+
+    <!-- ============================================================
+     PLATFORM VIEW (Landing Page)
+============================================================ -->
+    <div id="platformView">
+
+      <!-- NAV -->
+      <nav class="nav" id="mainNav">
+        <div class="nav__brand">
+          <div class="nav__mark">
+            <svg viewBox="0 0 18 18" fill="none">
+              <rect width="8" height="8" rx="2" fill="currentColor" />
+              <rect x="10" width="8" height="8" rx="2" fill="currentColor" opacity=".55" />
+              <rect y="10" width="8" height="8" rx="2" fill="currentColor" opacity=".55" />
+              <rect x="10" y="10" width="8" height="8" rx="2" fill="currentColor" />
+            </svg>
+          </div>
+          <span class="nav__logo-text">Portfoly</span>
+        </div>
+        <ul class="nav__links">
+          <li><a href="#templates" class="nav__link">Templates</a></li>
+          <li><a href="#features" class="nav__link">Features</a></li>
+          <li><a href="#how" class="nav__link">How It Works</a></li>
+        </ul>
+        <div class="nav__actions">
+          <button class="btn btn-outline btn-sm" onclick="scrollToTemplates()">Browse</button>
+          <button class="btn btn-primary btn-sm" onclick="scrollToTemplates()">Get Started Free →</button>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+
+      <!-- Mobile menu -->
+      <div class="mob-menu" id="mobMenu">
+        <a href="#templates" class="mob-link" onclick="closeMob()">Templates</a>
+        <a href="#features" class="mob-link" onclick="closeMob()">Features</a>
+        <a href="#how" class="mob-link" onclick="closeMob()">How It Works</a>
+        <button class="btn btn-primary" onclick="closeMob();scrollToTemplates()">Get Started Free</button>
+      </div>
+
+      <!-- HERO -->
+      <section class="hero" id="hero">
+        <div class="hero-beam"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
+        <div class="grid-overlay"></div>
+
+        <div class="hero-content" id="heroContent">
+          <div class="hero-pill">
+            <span class="pill-dot"></span>
+            30+ Premium Templates — Free Forever
+          </div>
+
+          <h1 class="hero-h1">
+            <span class="line1">Build Your Portfolio,</span>
+            <span class="line2">Effortlessly.</span>
+          </h1>
+
+          <p class="hero-sub">
+            Pick a stunning template, make it yours in minutes,
+            and launch the portfolio that actually gets you hired.
+            No code needed. No limits.
+          </p>
+
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" onclick="scrollToTemplates()">
+              Browse Templates
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="btn btn-outline btn-lg"
+              onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">See How It Works</button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-block">
+              <span><span class="stat-num" data-count="52">0</span><span class="stat-plus">+</span></span>
+              <span class="stat-label">Templates</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-block">
+              <span><span class="stat-num" data-count="14">0</span><span class="stat-plus">k+</span></span>
+              <span class="stat-label">Portfolios Built</span>
+            </div>
+            <div class="stat-sep"></div>
+            <div class="stat-block">
+              <span><span class="stat-num" data-count="98">0</span><span class="stat-plus">%</span></span>
+              <span class="stat-label">Satisfaction</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="scroll-hint">
+          <span>SCROLL</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="features" id="features">
+        <div class="features-inner">
+          <span class="section-eye reveal">Why Portfoly?</span>
+          <h2 class="section-h2 reveal d1">Everything you need<br />to <em>stand out</em></h2>
+          <p class="section-sub reveal d2">Built for developers, designers, students and creators who want a portfolio
+            that actually gets noticed.</p>
+
+          <div class="features-grid reveal d3">
+            <div class="feat-card">
+              <div class="feat-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="1" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.4" />
+                  <rect x="12" y="1" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.4" />
+                  <rect x="1" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.4" />
+                  <rect x="12" y="12" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.4" />
+                </svg>
+              </div>
+              <h3 class="feat-title">52+ Unique Templates</h3>
+              <p class="feat-desc">Every style covered — minimal developer, bold designer, creative, corporate. All
+                pixel-perfect and fully customizable.</p>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.4" />
+                  <path d="M10 6v4l2.5 2.5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="feat-title">Live Instant Editing</h3>
+              <p class="feat-desc">See every change in real time. Edit text, colors, fonts, and sections — zero refresh,
+                zero friction.</p>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M3 15L7 11L11 14L16 7L19 10" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="feat-title">ATS-Optimized</h3>
+              <p class="feat-desc">Structured to pass applicant tracking systems while impressing human recruiters at
+                the same time.</p>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.4" />
+                  <path d="M10 2c4.4 0 8 3.6 8 8 0 2.2-.9 4.2-2.3 5.7" stroke="currentColor" stroke-width="1.4"
+                    stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="feat-title">Custom Domain</h3>
+              <p class="feat-desc">Publish at yourname.portfoly.dev instantly, or connect your own custom domain in one
+                click.</p>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 1l2.5 6H19l-5.5 4 2 6.5L10 14l-5.5 3.5 2-6.5L1 7h6.5L10 1z" stroke="currentColor"
+                    stroke-width="1.4" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="feat-title">GitHub Sync</h3>
+              <p class="feat-desc">Auto-pull repos, contributions and commit history so your portfolio stays always up
+                to date.</p>
+            </div>
+            <div class="feat-card">
+              <div class="feat-icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.4" />
+                  <path d="M6 10h8M10 6v8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="feat-title">Analytics Dashboard</h3>
+              <p class="feat-desc">See who viewed your portfolio, where they came from, how long they stayed and which
+                projects they clicked.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FILTER + TEMPLATES -->
+      <section id="templates">
+        <div style="max-width:1300px;margin:0 auto;padding:60px 24px 20px;">
+          <span class="section-eye reveal">Templates</span>
+          <h2 class="section-h2 reveal d1">Choose your <em>perfect</em> template</h2>
+          <p class="section-sub reveal d2">52 expertly designed templates, each giving you a completely different vibe.
+            One click to start editing.</p>
+        </div>
+      </section>
+
+      <!-- Sticky filter bar -->
+      <div class="filter-bar" id="filterBar">
+        <div class="filter-bar-inner" id="categoryFilters"></div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="gallery">
+        <div class="gallery-inner">
+          <div class="gallery-meta">
+            <div class="gallery-count" id="templateCount">52 <span>Designs</span></div>
+            <select
+              style="background:var(--bg-2);border:1px solid var(--border);border-radius:var(--r);padding:8px 14px;color:var(--text-2);font-size:13px;outline:none;cursor:pointer;">
+              <option>Sort: Most Popular</option>
+              <option>Sort: Newest</option>
+              <option>Sort: A–Z</option>
+            </select>
+          </div>
+          <div class="tpl-grid" id="templateGrid"></div>
+        </div>
+      </div>
+
+      <!-- HOW IT WORKS -->
+      <section class="how-section" id="how">
+        <div class="how-inner">
+          <span class="section-eye reveal">Process</span>
+          <h2 class="section-h2 reveal d1">From zero to launched<br /><em>in minutes</em></h2>
+          <p class="section-sub reveal d2">Three simple steps. No tech skills needed.</p>
+          <div class="how-grid">
+            <div class="how-step reveal d1">
+              <div class="how-step-num">01</div>
+              <span class="how-step-icon">🎨</span>
+              <h3 class="how-step-title">Pick a Template</h3>
+              <p class="how-step-desc">Browse 52 stunning templates. Filter by category — developer, designer, student,
+                creative. Preview before you pick.</p>
+            </div>
+            <div class="how-step reveal d2">
+              <div class="how-step-num">02</div>
+              <span class="how-step-icon">✏️</span>
+              <h3 class="how-step-title">Customize Everything</h3>
+              <p class="how-step-desc">Edit your name, bio, skills, projects in the live editor. Change colors, fonts
+                and layouts — see updates instantly.</p>
+            </div>
+            <div class="how-step reveal d3">
+              <div class="how-step-num">03</div>
+              <span class="how-step-icon">🚀</span>
+              <h3 class="how-step-title">Generate & Share</h3>
+              <p class="how-step-desc">Create a professional link instantly. Perfect for your resume, LinkedIn, or
+                sharing with recruiters world-wide.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TESTIMONIALS -->
+      <section class="testi-section">
+        <div class="testi-inner">
+          <span class="section-eye reveal">Testimonials</span>
+          <h2 class="section-h2 reveal d1">Loved by <em>builders</em></h2>
+          <div class="testi-grid">
+            <div class="testi-card reveal d1">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"Portfoly helped me land my first job offer within two weeks of launching. The
+                Midnight Coder template was exactly what I needed."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#646cff,#42d392)">A</div>
+                <div>
+                  <div class="testi-name">Aryan Sharma</div>
+                  <div class="testi-role">CS Student → Software Engineer</div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-card reveal d2">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"I switched from Squarespace because Portfoly actually understands what developers
+                need. My GitHub stats are front and center."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#f0b429,#ff4f6e)">P</div>
+                <div>
+                  <div class="testi-name">Priya Kapoor</div>
+                  <div class="testi-role">Full Stack Developer</div>
+                </div>
+              </div>
+            </div>
+            <div class="testi-card reveal d3">
+              <div class="testi-stars">★★★★★</div>
+              <p class="testi-text">"The editor is buttery smooth and the templates are genuinely beautiful. I set mine
+                up in 20 minutes and got compliments the same day."</p>
+              <div class="testi-author">
+                <div class="testi-avatar" style="background:linear-gradient(135deg,#42d392,#4cc9f0)">R</div>
+                <div>
+                  <div class="testi-name">Rayan Malik</div>
+                  <div class="testi-role">UX Designer</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA BANNER -->
+      <section class="cta-banner">
+        <div class="cta-inner reveal">
+          <h2 class="cta-h2">
+            Ready to build your <span
+              style="background:linear-gradient(135deg,var(--acc-2),var(--teal));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">standout</span>
+            portfolio?
+          </h2>
+          <p class="cta-sub">Join thousands of developers and designers who launched with Portfoly.</p>
+          <button class="btn btn-primary btn-lg" onclick="scrollToTemplates()">
+            Start Building — It's Free
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <div class="footer-inner">
+          <div class="footer-grid">
+            <div>
+              <div class="footer-brand-name">Portfoly</div>
+              <p class="footer-brand-desc">The fastest way to build a beautiful, professional portfolio that gets you
+                hired.</p>
+            </div>
+            <div>
+              <div class="footer-col-title">Product</div>
+              <div class="footer-col-links">
+                <a href="#templates" class="footer-link">Templates</a>
+                <a href="#features" class="footer-link">Features</a>
+                <a href="#how" class="footer-link">How It Works</a>
+                <a href="#" class="footer-link">Pricing</a>
+              </div>
+            </div>
+            <div>
+              <div class="footer-col-title">Resources</div>
+              <div class="footer-col-links">
+                <a href="#" class="footer-link">Documentation</a>
+                <a href="#" class="footer-link">Blog</a>
+                <a href="#" class="footer-link">Changelog</a>
+                <a href="#" class="footer-link">Status</a>
+              </div>
+            </div>
+            <div>
+              <div class="footer-col-title">Company</div>
+              <div class="footer-col-links">
+                <a href="#" class="footer-link">About</a>
+                <a href="#" class="footer-link">Privacy</a>
+                <a href="#" class="footer-link">Terms</a>
+                <a href="#" class="footer-link">GitHub</a>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <span class="footer-copy">© 2025 Portfoly. Built for builders.</span>
+            <div class="footer-badges">
+              <span class="footer-badge">Open Source</span>
+              <span class="footer-badge">Backend Ready</span>
+              <span class="footer-badge">React + Vite</span>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+    </div><!-- /platformView -->
+
+    <!-- ============================================================
+     EDITOR VIEW
+============================================================ -->
+    <div id="editorView">
+      <div class="editor-shell">
+
+        <!-- Topbar -->
+        <div class="editor-top">
+          <div class="editor-top-left">
+            <button class="editor-back-btn" id="editorBackBtn">
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path d="M9 2L4 7l5 5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+              Back
+            </button>
+            <span class="editor-tpl-name" id="editorTplName">Editing: Template</span>
+          </div>
+          <div class="editor-top-center">
+            <button class="device-btn active" data-device="desktop" title="Desktop">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <rect x="1" y="1.5" width="13" height="9" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+                <path d="M4.5 13h6M7.5 10.5v2.5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" />
+              </svg>
+            </button>
+            <button class="device-btn" data-device="tablet" title="Tablet">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <rect x="2" y="1" width="11" height="13" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="7.5" cy="12" r=".7" fill="currentColor" />
+              </svg>
+            </button>
+            <button class="device-btn" data-device="mobile" title="Mobile">
+              <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
+                <rect x="3.5" y="1" width="8" height="13" rx="1.5" stroke="currentColor" stroke-width="1.2" />
+                <circle cx="7.5" cy="12" r=".7" fill="currentColor" />
+              </svg>
+            </button>
+          </div>
+          <div class="editor-top-right">
+            <button class="btn btn-ghost btn-sm" id="editorSaveBtn">Save Draft</button>
+            <button class="btn btn-primary btn-sm" id="editorPublishBtn">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+              </svg>
+              Create Link
+            </button>
+          </div>
+        </div>
+
+        <!-- Body -->
+        <div class="editor-body">
+          <!-- Sidebar -->
+          <aside class="editor-side">
+            <div class="editor-tab-bar">
+              <button class="editor-tab active" data-panel="content">Content</button>
+              <button class="editor-tab" data-panel="design">Design</button>
+              <button class="editor-tab" data-panel="sections">Sections</button>
+            </div>
+
+            <!-- Content panel -->
+            <div class="editor-panel active" id="panel-content">
+              <div class="ep-section">
+                <div class="ep-label">Personal Info</div>
+                <div class="ep-row"><label class="ep-field-lbl">Full Name</label><input class="ep-inp" id="ep-name"
+                    placeholder="Your Name" value="Aryan Sharma" /></div>
+                <div class="ep-row"><label class="ep-field-lbl">Title / Role</label><input class="ep-inp" id="ep-title"
+                    placeholder="e.g. Software Developer" value="Software Developer" /></div>
+                <div class="ep-row"><label class="ep-field-lbl">Bio</label><textarea class="ep-inp ep-textarea"
+                    id="ep-bio"
+                    placeholder="Short bio...">CS student passionate about building clean, efficient software.</textarea>
+                </div>
+                <div class="ep-row"><label class="ep-field-lbl">Location</label><input class="ep-inp" id="ep-location"
+                    placeholder="City, Country" value="India" /></div>
+                <div class="ep-row"><label class="ep-field-lbl">Email</label><input class="ep-inp" id="ep-email"
+                    type="email" placeholder="you@email.com" /></div>
+              </div>
+              <div class="ep-section">
+                <div class="ep-label">Social Links</div>
+                <div class="ep-row"><label class="ep-field-lbl">GitHub</label><input class="ep-inp"
+                    placeholder="https://github.com/..." /></div>
+                <div class="ep-row"><label class="ep-field-lbl">LinkedIn</label><input class="ep-inp"
+                    placeholder="https://linkedin.com/in/..." /></div>
+                <div class="ep-row"><label class="ep-field-lbl">Twitter / X</label><input class="ep-inp"
+                    placeholder="https://twitter.com/..." /></div>
+                <div class="ep-row"><label class="ep-field-lbl">Website</label><input class="ep-inp"
+                    placeholder="https://yoursite.com" /></div>
+              </div>
+              <div class="ep-section">
+                <div class="ep-label">Skills (comma-separated)</div>
+                <div class="ep-row"><input class="ep-inp" placeholder="React, Node.js, Python, C++..."
+                    value="React, Node.js, Python, C++" /></div>
+              </div>
+            </div>
+
+            <!-- Design panel -->
+            <div class="editor-panel" id="panel-design">
+              <div class="ep-section">
+                <div class="ep-label">Color Scheme</div>
+                <div class="swatches">
+                  <div class="swatch active" data-scheme="dark" style="background:#07070a" title="Void Dark"></div>
+                  <div class="swatch" data-scheme="navy" style="background:#0d1117" title="GitHub Dark"></div>
+                  <div class="swatch" data-scheme="midnight" style="background:#0f0f23" title="Midnight"></div>
+                  <div class="swatch" data-scheme="forest" style="background:#0d1f0d" title="Forest"></div>
+                  <div class="swatch" data-scheme="ocean" style="background:#0a1628" title="Ocean"></div>
+                  <div class="swatch" data-scheme="light" style="background:#f7f7f7;border:1px solid #ccc"
+                    title="Light"></div>
+                </div>
+              </div>
+              <div class="ep-section">
+                <div class="ep-label">Accent Color</div>
+                <div class="swatches">
+                  <div class="swatch active" data-accent="violet" style="background:#646cff" title="Violet"></div>
+                  <div class="swatch" data-accent="teal" style="background:#42d392" title="Teal"></div>
+                  <div class="swatch" data-accent="blue" style="background:#2f81f7" title="Blue"></div>
+                  <div class="swatch" data-accent="rose" style="background:#ff4f6e" title="Rose"></div>
+                  <div class="swatch" data-accent="gold" style="background:#f0b429" title="Gold"></div>
+                  <div class="swatch" data-accent="purple" style="background:#bc8cff" title="Purple"></div>
+                </div>
+              </div>
+              <div class="ep-section">
+                <div class="ep-label">Font Style</div>
+                <div class="font-opts">
+                  <button class="font-opt active" data-font="outfit" style="font-family:'Outfit'">Outfit — Modern
+                    Sans</button>
+                  <button class="font-opt" data-font="mono" style="font-family:'DM Mono'">DM Mono — Tech</button>
+                  <button class="font-opt" data-font="lora" style="font-family:'Lora'">Lora — Editorial</button>
+                  <button class="font-opt" data-font="system">System — Fast</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sections panel -->
+            <div class="editor-panel" id="panel-sections">
+              <div class="ep-section">
+                <div class="ep-label">Toggle & Reorder Sections</div>
+                <div class="sections-list">
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Hero / Intro</span><label
+                      class="tog"><input type="checkbox" checked /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>About Me</span><label class="tog"><input
+                        type="checkbox" checked /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Skills</span><label class="tog"><input
+                        type="checkbox" checked /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Projects</span><label class="tog"><input
+                        type="checkbox" checked /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Education</span><label class="tog"><input
+                        type="checkbox" checked /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Experience</span><label class="tog"><input
+                        type="checkbox" /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Achievements</span><label
+                      class="tog"><input type="checkbox" checked /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Certifications</span><label
+                      class="tog"><input type="checkbox" /><span class="tog-slider"></span></label></div>
+                  <div class="sec-item"><span class="drag-hdl">⠿</span><span>Contact</span><label class="tog"><input
+                        type="checkbox" checked /><span class="tog-slider"></span></label></div>
+                </div>
+              </div>
+            </div>
+          </aside>
+
+          <!-- Canvas -->
+          <div class="editor-canvas-wrap">
+            <div class="editor-canvas" id="editorCanvas">
+              <iframe class="editor-iframe" id="editorIframe" title="Portfolio Preview"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- /editorView -->
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+      <div class="toast-icon">✓</div>
+      <div class="toast-body">
+        <div class="toast-msg" id="toastMsg">Link created!</div>
+        <div class="toast-url" id="toastUrl">yourname.portfoly.me</div>
+      </div>
+      <button class="toast-copy-btn" id="toastCopyBtn" title="Copy to clipboard">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+      </button>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
