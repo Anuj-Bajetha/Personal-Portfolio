@@ -91,6 +91,7 @@ No installation or dependencies are required.
 > Add screenshots of your project here.
 
 Loading Window - (https://github.com/Anuj-Bajetha/Personal-Portfolio/blob/94160e922c5d6c1f375c7c2e8ca10d1ff3656d8d/Loading%20Window.png)
+Home Page - (https://github.com/Anuj-Bajetha/Personal-Portfolio/blob/9976620d0ac5cb8205190f5ea0785a1e5126e9c5/Home%20Page.png)
 
 ---
 
